@@ -1,4 +1,4 @@
-def twoSum(self, numbers: list[int], target: int) -> List[int]:
+def twoSum(self, numbers: list[int], target: int) -> list[int]:
 	
 	leftIndex = 0
 	rightIndex = len(numbers) - 1
