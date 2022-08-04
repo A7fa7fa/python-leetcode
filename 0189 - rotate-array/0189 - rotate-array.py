@@ -20,3 +20,18 @@ def rotate(nums: list[int], k: int) -> None:
 		else:
 			nums[idx] = first[idx - len(second)]
 		
+
+def rotate(nums: list[int], k: int) -> None:
+	"""
+	Do not return anything, modify nums in-place instead.
+	"""
+
+	d = len(nums)
+	k = k % d
+	if k < d / 2:
+		for _ in range(k):
+			nums.insert(0,nums.pop(-1))
+	else:
+		k = d - k
+		for _ in range(k):
+			nums.append(nums.pop(0))
