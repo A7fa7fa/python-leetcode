@@ -44,3 +44,36 @@ res = lengthOfLongestSubstring("1111")
 print(res)
 res = lengthOfLongestSubstring("dvdf")
 print(res)
+
+
+def lengthOfLongestSubstring(s: str) -> int:
+	
+	maxRep = 0
+	curStr =  ""
+	
+	
+	foundChar = dict()
+	
+	for char in s:
+		
+		
+		if char not in foundChar:            
+			foundChar[char] = len(curStr)
+			curStr += char 
+			maxRep = max(maxRep, len(curStr))
+
+		else:
+			maxRep = max(maxRep, len(curStr))
+			remove = curStr[:foundChar[char] + 1]
+			curStr = curStr[foundChar[char] + 1:]
+			for c in remove:
+				del foundChar[c]
+			
+			for key, value in foundChar.items():
+				foundChar[key] = value - len(remove)
+				
+			foundChar[char] = len(curStr)
+			curStr += char
+				
+	
+	return maxRep
