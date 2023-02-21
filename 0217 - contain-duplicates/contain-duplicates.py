@@ -8,3 +8,5 @@ def containsDuplicate(self, nums: list[int]) -> bool:
         visited.add(num)
     return False
     
+# alternative:
+# return len(nums) > len(set(nums))
