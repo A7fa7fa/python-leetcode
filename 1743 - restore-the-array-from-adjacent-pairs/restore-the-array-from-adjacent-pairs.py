@@ -15,7 +15,7 @@ class Solution:
         if nextNum == prev:
             if len(adj[num]) == 0:
                 return
-            nextNum = adj.get(num, None).pop()
+            nextNum = adj.get(num).pop()
         del adj[num]
 
                 
