@@ -9,3 +9,9 @@ class Solution:
         if totalNums == totalActual:
             return len(nums)
         return totalActual - totalNums
+
+class SolutionWithSets:
+    def missingNumber(self, nums: List[int]) -> int:
+        totalNums = set(nums)
+        totalActual = set([i for i in range(len(nums)+1)])
+        return list(totalActual - totalNums)[0]
